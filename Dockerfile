@@ -38,7 +38,7 @@ RUN \
 	-D WITH_OPENCLAMDFFT=OFF \
 	-D CMAKE_CXX_FLAGS="-O3 -funsafe-math-optimizations" \
 	-D CMAKE_C_FLAGS="-O3 -funsafe-math-optimizations" \
-	.. && make && make install && \
+	.. && make -j"$(nproc)" && make install && \
 cd /root && rm -rf opencv-3.3.0 opencv_contrib-3.3.0
 
 
